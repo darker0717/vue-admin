@@ -1,19 +1,44 @@
 <template>
-  <div id="login">
-    <el-form :model="loginForm">
-      <h2>Ray商城登录</h2>
-      <el-form-item>
-        <el-input name="username" placeholder="请输入用户名/手机号" auto-complete="on"></el-input>
-      </el-form-item>
-
-      <el-form-item>
-        <el-input name="password" placeholder="请输入密码" auto-complete="on"></el-input>
-      </el-form-item>
-
-      <el-form-item>
-        <el-button type="primary">登录</el-button>
-      </el-form-item>
-    </el-form>
+  <div class="pages">
+    <!-- <img src="../../../static/ting.jpg" alt /> -->
+    <div class="login">
+      <el-form
+        :model="ruleForm2"
+        status-icon
+        ref="ruleForm2"
+        label-position="left"
+        label-width="0px"
+        class="demo-ruleForm login-page"
+      >
+        <h3 class="title">系统登录</h3>
+        <el-form-item>
+          <el-input
+            type="text"
+            name="username"
+            auto-complete="off"
+            placeholder="用户名"
+            style="width:90%"
+          ></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input
+            type="password"
+            name="password"
+            auto-complete="off"
+            placeholder="密码"
+            style="width:90%"
+          ></el-input>
+        </el-form-item>
+        <el-checkbox
+          v-model="checked"
+          class="rememberme"
+          style="float: left;margin-left:30px;margin-bottom:10px"
+        >记住密码</el-checkbox>
+        <el-form-item style="width:100%;">
+          <el-button type="primary" style="width:90%;" @click="handleSubmit">登录</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -22,14 +47,34 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      ruleForm2: {},
+      aglint: "right",
+      checked: ""
+    };
   },
-  methods: {},
-  created() {},
-  mounted() {}
+  mounted() {},
+  methods: {
+    handleSubmit() {
+      this.$router.push({ path: "/home" });
+    }
+  }
 };
 </script>
-<style lang="less" scoped>
-.wrapper {
+<style>
+.pages {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #2d3a4b;
+}
+.login {
+  float: right;
+  margin-top: 260px;
+  margin-right: 200px;
+  top: 900px;
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 </style>

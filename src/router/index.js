@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-vars */
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Layout from '@/pages/layout/index.vue'
 import Login from '../pages/login'
 
 Vue.use(Router)
 
-var router = new Router({
+var Routers = new Router({
   routes: [{
       path: '/',
       redirect: '/login'
@@ -18,7 +17,7 @@ var router = new Router({
     {
       path: '/home',
       name: 'home',
-      component: HelloWorld,
+      component: Layout,
       redirect: '/index/index',
       children: [{
         path: '/index/index',
@@ -29,4 +28,4 @@ var router = new Router({
     }
   ]
 })
-export default router
+export default Routers
