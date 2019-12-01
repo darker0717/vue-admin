@@ -69,10 +69,10 @@ export default {
   background-color: #2d3a4b;
 }
 .login {
+  position: relative;
   float: right;
-  margin-top: 260px;
   margin-right: 200px;
-  top: 900px;
+  top: 20%;
   width: 400px;
   background-color: #ffffff;
   border-radius: 10px;
