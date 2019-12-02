@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Mock from "@/mock/information.js";
+import Mock from "@/mock/router.js";
 export default {
   name: "Menus",
   components: {},
