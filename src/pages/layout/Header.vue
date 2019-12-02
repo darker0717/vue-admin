@@ -70,6 +70,7 @@ export default {
   cursor: pointer;
   width: 40px;
   height: 40px;
+  margin-top: 15px;
   border-radius: 10px;
 }
 </style>
