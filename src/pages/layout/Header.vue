@@ -18,8 +18,13 @@
     <div class="zoom1">
       <el-dropdown>
         <span class="el-dropdown-link">
-          下拉菜单
-          <i class="el-icon-arrow-down el-icon--right"></i>
+          <!-- 下拉菜单 -->
+          <img
+            class="Imgs"
+            src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80"
+            alt
+          />
+          <i class="el-icon-caret-bottom"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>黄金糕</el-dropdown-item>
@@ -60,5 +65,11 @@ export default {
 .zoom1 {
   float: right;
   margin-right: 20px;
+}
+.Imgs {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
 }
 </style>

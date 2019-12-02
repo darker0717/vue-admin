@@ -6,23 +6,21 @@
       background-color="#2d3a4b"
       text-color="#fff"
     >
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+      <el-submenu :index="item.id" v-for="(item,i) in list" :key="i">
+        <template slot="title">
+          <i :class="item.icon"></i>
+          <span>{{item.name}}</span>
+        </template>
+        <el-menu-item-group v-for="(items,j) in item.children" :key="j">
+          <el-menu-item :index="items.id" @click="handleClick(items.path)">{{items.name}}</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
 
 <script>
+import Mock from "@/mock/information.js";
 export default {
   name: "Menus",
   components: {},
@@ -30,22 +28,40 @@ export default {
     collapse: Boolean
   },
   data() {
-    return {};
+    return {
+      list: []
+    };
   },
-  mounted() {},
-  methods: {}
+  mounted() {
+    var that = this;
+    that.list = Mock;
+  },
+  methods: {
+    handleClick(path) {
+      this.$router.push({
+        path: path
+      });
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
+.el-menu {
+  border: none;
+}
+.el-submenu {
+  text-align: left;
+}
 .el-menu-item {
-  padding: 0 50px;
+  text-align: left;
+  margin-top: -15px;
+  margin-left: 12px;
+  min-width: 187px;
 }
 .el-menu-vertical-demo {
   width: 200px;
-  //   min-height: 100%;
 }
 .el-menu-vertical-demo1 {
   width: 70px;
-  //   min-height: 100%;
 }
 </style>

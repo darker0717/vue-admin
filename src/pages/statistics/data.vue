@@ -1,5 +1,7 @@
 <template>
-  <div class="wrapper">fdsafdsafadsfasd</div>
+  <div class="wrapper">
+    <span>邓华章</span>
+  </div>
 </template>
 
 <script>

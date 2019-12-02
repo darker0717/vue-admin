@@ -7,7 +7,9 @@
       <div class="header">
         <Header @handleCollapse="handleCollapse" />
       </div>
-      <div class="nav"></div>
+      <div class="nav">
+        <router-view></router-view>
+      </div>
       <div class="footer">
         <Footer />
       </div>
@@ -63,59 +65,17 @@ export default {
   line-height: 60px;
 }
 .nav {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: yellow;
+  background: #f0f2f5;
 }
 .footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background: green;
 }
-// .left {
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-// }
-// .meun {
-//   position: fixed;
-//   height: 100%;
-//   background-color: #2d3a4b;
-// }
-// .right {
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   background-color: red;
-// }
-// .header {
-//   position: fixed;
-//   float: right;
-//   width: 100%;
-//   height: 60px;
-//   line-height: 60px;
-//   margin-left: 250px;
-//   background-color: #fff;
-// }
-// .footer {
-//   position: fixed;
-//   bottom: 0;
-//   width: 100%;
-//   height: 60px;
-//   line-height: 60px;
-//   margin-left: 250px;
-//   background-color: #fff;
-// }
-// .nav {
-//   position: fixed;
-//   top: 60px;
-//   width: 100%;
-//   height: 100%;
-//   margin-left: 250px;
-//   background-color: yellow;
-//   z-index: -1;
-// }
 </style>

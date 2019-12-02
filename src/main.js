@@ -12,6 +12,12 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 /* eslint-disable no-new */
+
+// const originalPush = Routers.prototype.push
+// Routers.prototype.push = function push(location) {
+//   return originalPush.call(this, location).catch(err => err)
+// }
+
 new Vue({
   el: '#app',
   router,

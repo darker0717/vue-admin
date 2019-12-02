@@ -20,12 +20,24 @@ var Routers = new Router({
       component: Layout,
       redirect: '/index/index',
       children: [{
-        path: '/index/index',
-        name: '数据统计',
-        props: true,
-        component: () => import('../pages/statistics/index.vue')
-      }]
+          path: '/index/index',
+          name: '数据统计',
+          props: true,
+          component: () => import('../pages/statistics/index.vue')
+        },
+        {
+          path: '/data/index',
+          name: '数据图表',
+          props: true,
+          component: () => import('../pages/statistics/data.vue')
+        }
+      ]
     }
   ]
 })
+//解决路由不协调报错
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 export default Routers
