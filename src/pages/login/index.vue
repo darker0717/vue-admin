@@ -2,15 +2,15 @@
   <div class="pages">
     <!-- <img src="../../../static/ting.jpg" alt /> -->
     <div class="login">
+      <h3 class="title">系统登录</h3>
       <el-form
         :model="ruleForm2"
         status-icon
         ref="ruleForm2"
         label-position="left"
         label-width="0px"
-        class="demo-ruleForm login-page"
+        class="formList"
       >
-        <h3 class="title">系统登录</h3>
         <el-form-item>
           <el-input
             type="text"
@@ -70,11 +70,18 @@ export default {
 }
 .login {
   position: relative;
+  display: inline;
   float: right;
   margin-right: 200px;
   top: 20%;
   width: 400px;
   background-color: #ffffff;
   border-radius: 10px;
+}
+.formList {
+  padding-left: 40px;
+}
+.title {
+  text-align: center;
 }
 </style>
