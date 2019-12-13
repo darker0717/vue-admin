@@ -30,6 +30,24 @@ var Routers = new Router({
           name: '数据图表',
           props: true,
           component: () => import('../pages/statistics/data.vue')
+        },
+        {
+          path: '/table',
+          name: '数据表',
+          props: true,
+          component: () => import('../pages/table/index.vue')
+        },
+        {
+          path: '/Article/steps',
+          name: '步骤条',
+          props: true,
+          component: () => import('../pages/Articlesteps/index.vue')
+        },
+        {
+          path: '/system/set',
+          name: '系统设置',
+          props: true,
+          component: () => import('../pages/Articlesteps/index.vue')
         }
       ]
     }

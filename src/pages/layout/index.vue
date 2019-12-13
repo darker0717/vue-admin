@@ -1,19 +1,21 @@
 <template>
-  <div class="content">
-    <div class="left">
-      <Menus :collapse="collapse" />
-    </div>
-    <div class="right">
-      <div class="header">
-        <Header @handleCollapse="handleCollapse" />
-      </div>
-      <div class="nav">
-        <router-view></router-view>
-      </div>
-      <div class="footer">
-        <Footer />
-      </div>
-    </div>
+  <div>
+    <el-container class="content">
+      <el-aside :width="collapse?'60px':'200px'">
+        <Menus :collapse="collapse" />
+      </el-aside>
+      <el-container>
+        <el-header>
+          <Header @handleCollapse="handleCollapse" />
+        </el-header>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+        <el-footer>
+          <Footer />
+        </el-footer>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -44,42 +46,28 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
+<style scoped>
 .content {
   position: fixed;
-  display: flex;
   width: 100%;
   height: 100%;
 }
-.left {
-  height: 100%;
-  background: #2d3a4b;
-  z-index: 1;
-}
-.right {
-  width: 100%;
-  height: 100%;
-}
-.header {
-  width: 100%;
-  height: 60px;
+.el-header,
+.el-footer {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
   line-height: 60px;
 }
-.nav {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  background: #f0f2f5;
+.el-aside {
+  background-color: rgb(45, 58, 75);
+  text-align: center;
+  line-height: 200px;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background: #fff;
-  z-index: 0;
+.el-main {
+  background-color: #e9eef3;
+  color: #333;
+  text-align: center;
+  /* line-height: 160px; */
 }
 </style>

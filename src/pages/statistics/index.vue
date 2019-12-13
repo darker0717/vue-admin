@@ -8,7 +8,7 @@
               <div class="card1">
                 <span class="el-icon-view" style="font-size:48px;color:#40c9c6"></span>
               </div>
-              <div class="card1">
+              <div class="card2">
                 <div class="title">New Look</div>
                 <span class="title1">102,400</span>
               </div>
@@ -23,7 +23,7 @@
               <div class="card1">
                 <span class="el-icon-lollipop" style="font-size:48px;color:#36a3f7"></span>
               </div>
-              <div class="card1">
+              <div class="card2">
                 <div class="title">New Music</div>
                 <span class="title1">81,212</span>
               </div>
@@ -38,7 +38,7 @@
               <div class="card1">
                 <span class="el-icon-set-up" style="font-size:48px; color:#f4516c"></span>
               </div>
-              <div class="card1">
+              <div class="card2">
                 <div class="title">New Game</div>
                 <span class="title1">9,280</span>
               </div>
@@ -53,7 +53,7 @@
               <div class="card1">
                 <span class="el-icon-film" style="font-size:48px;color:#34bfa3"></span>
               </div>
-              <div class="card1">
+              <div class="card2">
                 <div class="title">New Movie</div>
                 <span class="title1">13,600</span>
               </div>
@@ -68,24 +68,22 @@
     <div style="background-color:#f0f2f5;margin-left: 20px;">
       <Echarts1 />
     </div>
+    <!-- 表格 -->
     <div style="margin-left:20px;margin-top:20px">
-      <el-row>
-        <el-col :span="9">
-          <div class="grid-content">
-            <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
-              <el-table-column prop="date" label="order_No" width="150"></el-table-column>
-              <el-table-column prop="name" label="Price" width="100"></el-table-column>
-              <el-table-column prop="address" label="Stutas"></el-table-column>
-            </el-table>
-          </div>
-        </el-col>
-        <el-col :span="7">
-          <div class="grid-content"></div>
-        </el-col>
-        <el-col :span="7">
-          <div class="grid-content"></div>
-        </el-col>
-      </el-row>
+      <el-table :data="list" style="width: 100%;padding-top: 15px;">
+        <el-table-column label="Order_No" min-width="200">
+          <template slot-scope="scope">{{ scope.row.order_no}}</template>
+        </el-table-column>
+        <el-table-column label="Price" width="195" align="center">
+          <template slot-scope="scope">¥{{ scope.row.price }}</template>
+        </el-table-column>
+        <el-table-column label="Status" width="100" align="center">
+          <template slot-scope="{row}">
+            <el-tag :type="row.status">{{ row.status }}</el-tag>
+          </template>
+        </el-table-column>
+      </el-table>
+      <div></div>
     </div>
     <div style="width:100%;height:100px"></div>
   </div>
@@ -102,26 +100,26 @@ export default {
   props: {},
   data() {
     return {
-      tableData: [
+      list: [
         {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+          order_no: "8eAAe33f-CC1E-cBd9-B3c4-3A8Eea",
+          price: "¥14,630.2",
+          status: "success"
         },
         {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+          order_no: "FAedBb2E-deD4-981b-c5b7-faE72b",
+          price: "¥14,159.4",
+          status: "success"
         },
         {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+          order_no: "ed9c8F4e-bB53-Bed6-6a8A-b0Bd3E",
+          price: "¥2,067.8",
+          status: "pending"
         },
         {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+          order_no: "fDea9eED-4722-eE8e-Ec7F-f338Af",
+          price: "¥6,977.17",
+          status: "pending"
         }
       ]
     };
@@ -149,22 +147,20 @@ export default {
   margin-left: 20px;
   background: #fff;
 }
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 .card1 {
-  float: left;
-  margin: -7px 0 0;
-  padding: 16px;
-  -webkit-transition: all 0.38s ease-out;
-  transition: all 0.38s ease-out;
-  border-radius: 6px;
+  line-height: 100px;
 }
 .card2 {
-  float: right;
-  font-weight: bold;
-  margin: 26px;
-  margin-left: 0px;
+  width: 50%;
+  line-height: 30px;
+  text-align: center;
 }
 .title {
-  line-height: 18px;
   color: rgba(0, 0, 0, 0.45);
   font-size: 16px;
   margin-bottom: 12px;
@@ -173,7 +169,7 @@ export default {
   font-size: 20px;
   font-weight: bold;
 }
-// .grid-content {
-//   width: 100%;
-// }
+.el-main {
+  line-height: 36px;
+}
 </style>

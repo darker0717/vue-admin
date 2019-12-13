@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import {
+  post,
+  get
+} from "./components/axios/index";
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './index.less'
@@ -13,6 +17,8 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 Vue.prototype.$echarts = echarts
+Vue.prototype.$get = get;
+Vue.prototype.$post = post;
 
 /* eslint-disable no-new */
 

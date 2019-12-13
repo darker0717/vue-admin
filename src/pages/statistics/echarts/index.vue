@@ -1,6 +1,6 @@
 <template>
   <div class="diagram">
-    <div class="echarts" ref="echarts" style="width:100%;height:350px"></div>
+    <div class="echarts" ref="echarts"></div>
   </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
     };
   },
   mounted() {
-    let myechart = this.$echarts.init(this.$refs.echarts); //初始化一个echarts
     let option = {
       title: {
         text: "堆叠区域图"
@@ -99,6 +98,7 @@ export default {
         }
       ]
     };
+    let myechart = this.$echarts.init(this.$refs.echarts); //初始化一个echarts
     myechart.setOption(option);
   },
   methods: {}
