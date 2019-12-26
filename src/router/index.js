@@ -38,6 +38,12 @@ var Routers = new Router({
           component: () => import('../pages/table/index.vue')
         },
         {
+          path: '/table/query',
+          name: '数据查询',
+          props: true,
+          component: () => import('../pages/table/search.vue')
+        },
+        {
           path: '/Article/steps',
           name: '步骤条',
           props: true,

@@ -23,6 +23,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .wrapper {
+  font-size: 0.16rem;
   text-align: center;
 }
 </style>

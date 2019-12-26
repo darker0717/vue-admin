@@ -57,7 +57,6 @@ export default {
   background-color: #fff;
   color: #000;
   text-align: center;
-  line-height: 60px;
 }
 .el-aside {
   background-color: rgb(45, 58, 75);

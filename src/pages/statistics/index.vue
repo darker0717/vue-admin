@@ -6,11 +6,11 @@
           <el-card class="box-card">
             <div class="card">
               <div class="card1">
-                <span class="el-icon-view" style="font-size:48px;color:#40c9c6"></span>
+                <span class="el-icon-view" style="font-size:0.48rem;color:#40c9c6"></span>
               </div>
               <div class="card2">
                 <div class="title">New Look</div>
-                <span class="title1">102,400</span>
+                <div class="title1">102,400</div>
               </div>
             </div>
           </el-card>
@@ -25,7 +25,7 @@
               </div>
               <div class="card2">
                 <div class="title">New Music</div>
-                <span class="title1">81,212</span>
+                <div class="title1">81,212</div>
               </div>
             </div>
           </el-card>
@@ -40,7 +40,7 @@
               </div>
               <div class="card2">
                 <div class="title">New Game</div>
-                <span class="title1">9,280</span>
+                <div class="title1">9,280</div>
               </div>
             </div>
           </el-card>
@@ -55,7 +55,7 @@
               </div>
               <div class="card2">
                 <div class="title">New Movie</div>
-                <span class="title1">13,600</span>
+                <div class="title1">13,600</div>
               </div>
             </div>
           </el-card>
@@ -143,31 +143,35 @@ export default {
 }
 .box-card {
   width: 90%;
-  height: 110px;
   margin-left: 20px;
   background: #fff;
 }
 .card {
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
 }
 .card1 {
-  line-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card2 {
   width: 50%;
+  margin-left: 0.3rem;
   line-height: 30px;
   text-align: center;
 }
 .title {
   color: rgba(0, 0, 0, 0.45);
-  font-size: 16px;
-  margin-bottom: 12px;
+  font-size: 0.16rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.12rem;
 }
 .title1 {
-  font-size: 20px;
+  font-size: 0.2rem;
   font-weight: bold;
+  margin-top: 0.2rem;
 }
 .el-main {
   line-height: 36px;

@@ -26,6 +26,10 @@ const Information = [{
       id: '2-1',
       name: '数据表',
       path: '/table'
+    }, {
+      id: '2-2',
+      name: '数据搜索',
+      path: '/table/query'
     }]
   },
   {

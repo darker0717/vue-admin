@@ -55,15 +55,19 @@ export default {
 </script>
 <style lang="less" scoped>
 .content1 {
-  //   float: right;
+  width: 100%;
+  height: 100%;
 }
 .zoom {
   float: left;
-  margin-top: 15px;
-  margin-left: 20px;
+  display: inline-flex;
+  margin-top: 0.15rem;
 }
 .zoom1 {
   float: right;
+  display: inline-flex;
+  width: 0.7rem;
+  height: 0.58rem;
   margin-right: 20px;
 }
 .Imgs {
