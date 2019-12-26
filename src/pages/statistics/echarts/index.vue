@@ -104,6 +104,7 @@ export default {
       };
       let myechart = this.$echarts.init(this.$refs.echarts); //初始化一个echarts
       myechart.setOption(option);
+      window.onresize = myechart.resize;
     }
   }
 };
@@ -111,9 +112,9 @@ export default {
 <style lang="less" scoped>
 .diagram {
   background-color: #fff;
-  padding: 16px 16px 0px;
-  margin-left: 20px;
-  margin-bottom: 32px;
+  padding: 0.16rem 0.16rem 0px;
+  margin-left: 0.2rem;
+  margin-bottom: 0.32rem;
   height: 3.7rem;
 }
 .echarts {

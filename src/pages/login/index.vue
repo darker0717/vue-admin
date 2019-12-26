@@ -104,7 +104,6 @@ export default {
         this.username = value.username;
         this.password = value.password;
       }
-      console.log(value, "value");
     }
   }
 };
@@ -130,6 +129,7 @@ export default {
   padding-left: 40px;
 }
 .title {
+  font-size: 0.3rem;
   text-align: center;
 }
 </style>
