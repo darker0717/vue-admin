@@ -23,6 +23,7 @@ export default {
         title: {
           text: "堆叠区域图"
         },
+        color: ["#007EC5", "#0EA6B2", "#4C7CF7", "#53A4ED"],
         tooltip: {
           trigger: "axis",
           axisPointer: {

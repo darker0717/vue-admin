@@ -27,6 +27,7 @@ const option = {
   //   text: '在中国租个房子有多贵？',
   //   subtext: '市中心一室月租费'
   // },
+  color: ["#007EC5", "#0EA6B2"],
   legend: {
     show: true,
     data: ['价格范围', '均值']
