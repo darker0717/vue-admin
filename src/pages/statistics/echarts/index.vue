@@ -105,13 +105,17 @@ export default {
       };
       let myechart = this.$echarts.init(this.$refs.echarts); //初始化一个echarts
       myechart.setOption(option);
-      window.onresize = myechart.resize;
+      //自适应echart图表
+      window.addEventListener("resize", function() {
+        myechart.resize();
+      });
     }
   }
 };
 </script>
 <style lang="less" scoped>
 .diagram {
+  display: flex;
   background-color: #fff;
   padding: 0.16rem 0.16rem 0px;
   margin-left: 0.2rem;

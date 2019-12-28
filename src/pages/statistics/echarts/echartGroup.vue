@@ -32,7 +32,6 @@ export default {
     this.option = Data;
     let myechart = this.$echarts.init(this.$refs.echart1);
     myechart.setOption(this.option);
-    window.onresize = myechart.resize;
     let myechart1 = this.$echarts.init(this.$refs.echart2);
     let option = {
       angleAxis: {},
@@ -73,7 +72,6 @@ export default {
     };
     myechart1.setOption(option);
     let myechart2 = this.$echarts.init(this.$refs.echart3);
-    window.onresize = myechart1.resize;
     let option1 = {
       legend: {},
       tooltip: {},
@@ -99,7 +97,12 @@ export default {
       series: [{ type: "bar" }, { type: "bar" }, { type: "bar" }]
     };
     myechart2.setOption(option1);
-    window.onresize = myechart2.resize;
+    //echart自适应div
+    window.addEventListener("resize", function() {
+      myechart.resize();
+      myechart1.resize();
+      myechart2.resize();
+    });
   },
   methods: {}
 };

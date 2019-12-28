@@ -1,6 +1,6 @@
 <template>
   <div class="content1">
-    <el-tabs type="border-card" style="width: 100%;">
+    <el-tabs type="border-card" style="font-size: 0.3rem;">
       <el-tab-pane label="导出">
         <div class="contents">
           <div style="width: 100%">

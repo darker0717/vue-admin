@@ -91,7 +91,7 @@
 
 <script>
 import Echarts from "./echarts";
-import Echarts1 from "./echarts/index1.vue";
+import Echarts1 from "./echarts/echartGroup.vue";
 export default {
   components: {
     Echarts,
