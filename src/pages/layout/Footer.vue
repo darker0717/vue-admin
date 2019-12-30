@@ -23,6 +23,9 @@ export default {
 </script>
 <style lang="less" scoped>
 .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 0.16rem;
   text-align: center;
 }

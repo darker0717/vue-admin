@@ -1,8 +1,46 @@
 <template>
   <div class="wrapper">
     <div class="wrapper-conter">
+      <div class="wrapper-search">
+        <div class="search-left">
+          <el-input v-model="params.keywords" placeholder="请输入查找内容"></el-input>
+        </div>
+        <div class="wrapper-right">
+          <div class="warapper-text">筛选</div>
+          <div class="wrapper-time">
+            <el-date-picker
+              v-model="times"
+              type="datetimerange"
+              range-separator="至"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              style="width:3.2rem"
+            ></el-date-picker>
+          </div>
+          <div class="wrapper-select">
+            <el-select v-model="params.runk" placeholder="请选择">
+              <el-option value></el-option>
+            </el-select>
+          </div>
+          <div class="wrapper-select">
+            <el-select v-model="params.runk" placeholder="请选择">
+              <el-option value></el-option>
+            </el-select>
+          </div>
+          <div class="wrapper-select">
+            <el-select v-model="params.runk" placeholder="请选择">
+              <el-option value></el-option>
+            </el-select>
+          </div>
+          <div class="wrapper-select">
+            <el-select v-model="params.runk" placeholder="请选择">
+              <el-option value></el-option>
+            </el-select>
+          </div>
+        </div>
+      </div>
       <div class="wrapper-table">
-        <el-table :data="tableData" stripe style="width:100%;height:5rem">
+        <el-table :data="tableData" stripe class="tables">
           <el-table-column prop="id" label="ID" width="80" align="center"></el-table-column>
           <el-table-column prop="img" label="照片" width="80" align="center">
             <template slot-scope="scope">
@@ -46,7 +84,10 @@ export default {
   props: {},
   data() {
     return {
+      times: [],
       params: {
+        keywords: "",
+        runk: "",
         page: 1,
         limit: 10
       },
@@ -76,7 +117,6 @@ export default {
     };
   },
   mounted() {
-    console.log(Mock, "Mock");
     this.getTableData();
   },
   methods: {
@@ -100,7 +140,6 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   width: 15.4rem;
-  height: 6rem;
   margin: 0.3rem 0.3rem 0.3rem 0.3rem;
   background: #fff;
 }
@@ -108,14 +147,43 @@ export default {
   position: relative;
   padding: 0.3rem 0.3rem 0.3rem 0.3rem;
 }
+.wrapper-search {
+  display: flex;
+  margin-top: -0.4rem;
+  margin-bottom: 0.2rem;
+}
+.wrapper-select {
+  width: 1.6rem;
+  margin-right: 0.2rem;
+}
+.wrapper-time {
+  display: inline-table;
+  width: 2rem;
+  margin-right: 0.2rem;
+}
+.wrapper-right {
+  display: flex;
+  width: 100%;
+}
+.warapper-text {
+  width: 0.4rem;
+  height: 0.15rem;
+  font-size: 0.2rem;
+  line-height: 1.7rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+}
 .wrapper-table {
-  //   width: 100%;
-  //   height: 100%;
 }
 .wrapper-paging {
   text-align: left;
+  height: 0.4rem;
 }
 .wrapper-none {
   display: none;
+}
+.tables {
+  width: 100%;
+  overflow: auto;
 }
 </style>
