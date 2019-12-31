@@ -60,6 +60,14 @@
           <el-table-column prop="price" label="价格" width="180" align="center"></el-table-column>
           <el-table-column prop="turnover" label="成交率" width="80" align="center"></el-table-column>
           <el-table-column prop="address" label="地址" width="220" align="center"></el-table-column>
+          <el-table-column prop="id" label="操作" width="220" align="center">
+            <template slot-scope="scope">
+              <div class="operation">
+                <div class="edit" @click="handleEdit(scope.row)">编辑</div>
+                <div class="delete" @click="handelDelete(scope.row)">删除</div>
+              </div>
+            </template>
+          </el-table-column>
         </el-table>
       </div>
       <div class="wrapper-paging" :class="total>0?'':'wrapper-none'">
@@ -91,28 +99,7 @@ export default {
         page: 1,
         limit: 10
       },
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        }
-      ],
+      tableData: [],
       total: 0
     };
   },
@@ -121,9 +108,14 @@ export default {
   },
   methods: {
     getTableData() {
+      this.$get("/personnel").then(res => {
+        console.log(res, "res");
+      });
       this.tableData = Mock.list;
       this.total = Mock.total;
     },
+    handleEdit() {},
+    handelDelete() {},
     handleSizeChange(val) {
       //页码分页
       this.params.page = val;
@@ -185,5 +177,17 @@ export default {
 .tables {
   width: 100%;
   overflow: auto;
+}
+.operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4080ff;
+}
+.edit {
+  margin-left: 0.2rem;
+}
+.delete {
+  margin-left: 0.2rem;
 }
 </style>
